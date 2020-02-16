@@ -1,5 +1,9 @@
 package memento;
 
+
+/**
+ * Caretaker
+ */
 public class Scm {
 
     private Snapshot snapshot;

@@ -4,9 +4,14 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Snapshot {
+
+/**
+ * Memento
+ */
+class Snapshot {
 
     private final Repository repository;
+
     private final List<File> files = new LinkedList<File>();
 
     Snapshot(Repository repository) {
