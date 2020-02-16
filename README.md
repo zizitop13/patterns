@@ -1,0 +1,1 @@
+All pattern examples in one place 
