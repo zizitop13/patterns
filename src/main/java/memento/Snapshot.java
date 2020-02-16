@@ -12,6 +12,9 @@ class Snapshot {
 
     private final Repository repository;
 
+    /**
+     * State
+     */
     private final List<File> files = new LinkedList<File>();
 
     Snapshot(Repository repository) {
