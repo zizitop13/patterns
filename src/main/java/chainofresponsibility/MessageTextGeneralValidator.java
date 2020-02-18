@@ -9,7 +9,6 @@ public class MessageTextGeneralValidator extends MessageValidator {
         if(request.getText() == null || request.getText().trim().isEmpty()){
             throw new ValidationException("Message is empty!");
         }
-
         if(request.getText().trim().length() > 1000){
             throw new ValidationException("Message length over 1000!");
         }
