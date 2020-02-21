@@ -18,11 +18,11 @@ public class Job{
         jobsLogPublisher.notify(STARTED, "Job started at time: " + new Date());
         try {
             doWork();
-            jobsLogPublisher.notify(FINISHED, "Job was stopped at time: " + new Date());
+            jobsLogPublisher.notify(FINISHED, "Job finished at time: " + new Date());
         } catch (RuntimeException e){
             jobsLogPublisher.notify(FATAL_ERROR, "Job failed at time: " + new Date() + " cause: " + e.getMessage());
         } catch (InterruptedException e) {
-            jobsLogPublisher.notify(STOPPED, "Job was stopped at time: " + new Date());
+            jobsLogPublisher.notify(STOPPED, "Job stopped at time: " + new Date());
         }
     }
 
