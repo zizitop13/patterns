@@ -6,6 +6,10 @@ import java.util.Date;
 
 import static observer.JobStatus.*;
 
+
+/**
+ * Example for EventPublisher client
+ */
 public class Job{
 
     private EventPublisher<JobStatus, String> jobsLogPublisher;
@@ -15,19 +19,25 @@ public class Job{
     }
 
     public void start() {
-        jobsLogPublisher.notify(STARTED, "Job started at time: " + new Date());
+        notify(STARTED, "Job started");
         try {
             doWork();
-            jobsLogPublisher.notify(FINISHED, "Job finished at time: " + new Date());
+            notify(FINISHED, "Job finished");
         } catch (RuntimeException e){
-            jobsLogPublisher.notify(FATAL_ERROR, "Job failed at time: " + new Date() + " cause: " + e.getMessage());
+            notify(FATAL_ERROR, "Job failed, cause: " + e.getMessage());
         } catch (InterruptedException e) {
-            jobsLogPublisher.notify(STOPPED, "Job stopped at time: " + new Date());
+            notify(STOPPED, "Job stopped");
         }
     }
 
     public void doWork() throws InterruptedException {
         // do something
         Thread.sleep(100);
+    }
+
+    private void notify(JobStatus status, String log){
+        if(jobsLogPublisher!=null){
+            jobsLogPublisher.notify(status, "[Timestamp: " + new Date().toString() + "] " + log);
+        }
     }
 }

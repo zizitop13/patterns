@@ -15,7 +15,7 @@ class Snapshot {
     /**
      * State
      */
-    private final List<File> files = new LinkedList<File>();
+    private final List<File> files = new LinkedList<>();
 
     Snapshot(Repository repository) {
         this.repository = repository;

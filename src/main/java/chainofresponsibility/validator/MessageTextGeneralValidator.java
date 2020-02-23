@@ -1,6 +1,4 @@
-package chainofresponsibility;
-
-import chainofresponsibility.validator.ValidationException;
+package chainofresponsibility.validator;
 
 public class MessageTextGeneralValidator extends MessageValidator {
 

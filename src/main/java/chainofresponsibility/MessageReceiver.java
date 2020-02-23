@@ -1,7 +1,13 @@
 package chainofresponsibility;
 
+import chainofresponsibility.validator.Message;
+import chainofresponsibility.validator.MessageValidator;
 import chainofresponsibility.validator.ValidationException;
 
+
+/**
+ * Example client of chain of responsibility
+ */
 public class MessageReceiver {
 
     private MessageValidator messageValidator;

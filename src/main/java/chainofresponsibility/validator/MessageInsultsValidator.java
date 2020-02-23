@@ -1,6 +1,4 @@
-package chainofresponsibility;
-
-import chainofresponsibility.validator.ValidationException;
+package chainofresponsibility.validator;
 
 import java.util.Arrays;
 import java.util.Optional;

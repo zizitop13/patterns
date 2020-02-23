@@ -1,6 +1,4 @@
-package chainofresponsibility;
-
-import chainofresponsibility.validator.ValidationException;
+package chainofresponsibility.validator;
 
 import java.util.Map;
 
@@ -10,7 +8,7 @@ public class MessageHeaderValidator extends MessageValidator {
         Map<String, String> header = request.getHeader();
         String from = header.get("from");
         if(from == null || from.trim().isEmpty()){
-            throw new ValidationException("Required header property from is empty!");
+            throw new ValidationException("Required header property 'from' is empty!");
         }
     }
 }

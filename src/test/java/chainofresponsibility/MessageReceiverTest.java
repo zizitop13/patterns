@@ -1,6 +1,7 @@
 package chainofresponsibility;
 
-import chainofresponsibility.validator.ValidationException;
+import chainofresponsibility.validator.Message;
+import chainofresponsibility.validator.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,8 +14,9 @@ public class MessageReceiverTest {
     @Before
     public void setUp() {
         mainValidator = new MessageHeaderValidator();
-        mainValidator.setNext(new MessageTextGeneralValidator(20)
-                        .setNext(new MessageInsultsValidator()));
+        Validator<Message> messageTextGeneralValidator = new MessageTextGeneralValidator(20)
+                .setNext(new MessageInsultsValidator());
+        mainValidator.setNext(messageTextGeneralValidator);
     }
 
     @Test

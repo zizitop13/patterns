@@ -1,7 +1,4 @@
-package chainofresponsibility;
-
-import chainofresponsibility.validator.ValidationException;
-import chainofresponsibility.validator.Validator;
+package chainofresponsibility.validator;
 
 public abstract class MessageValidator implements Validator<Message> {
 
