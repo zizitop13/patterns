@@ -1,1 +1,1 @@
-All pattern examples in one place 
+~~All~~ Some pattern examples in one place 
